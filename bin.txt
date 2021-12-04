@@ -1,0 +1,16 @@
+# Creating 3d scatter figure
+fig = plt.figure(figsize = (8, 8))
+ax = plt.axes(projection ="3d")
+
+# Creating plot
+ax.scatter3D(df.N, df.P, df.rainfall, c=df.temperature, cmap="rainbow", s=10)
+plt.title("3D scatter plot")
+ax.set_xlabel("ratio of Nitrogen content in soil")
+ax.set_ylabel("ratio of Phosphorous content in soil")
+ax.set_zlabel("rainfall in mm")
+
+# show plot
+plt.show()
+
+
+
