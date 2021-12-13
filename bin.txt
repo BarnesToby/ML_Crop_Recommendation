@@ -12,5 +12,12 @@ ax.set_zlabel("rainfall in mm")
 # show plot
 plt.show()
 
+## Preprocessing
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(df_cor)
+scaler.transform(df_cor)
+
+
 
 
