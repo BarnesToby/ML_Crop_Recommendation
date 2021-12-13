@@ -18,6 +18,25 @@ scaler = StandardScaler()
 scaler.fit(df_cor)
 scaler.transform(df_cor)
 
+# Cross Validation
+score = cross_val_score(NBC_fitted,features,target,cv=5)
+print('Cross validation score: ',score)
 
+## single tree
+# Extract single tree
+estimator = RFC_Model.estimators_[2]
 
+from sklearn.tree import export_graphviz
+# Export as dot file
+export_graphviz(estimator, out_file='tree.dot',
+                feature_names = df.drop(['label'], axis = 1),
+                class_names = df['label'],
+                rounded = True, proportion = False, filled = True)
 
+# Convert to png using system command (requires Graphviz)
+from subprocess import call
+call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
+
+# Display in jupyter notebook
+from IPython.display import Image
+Image(filename = 'tree.png')
