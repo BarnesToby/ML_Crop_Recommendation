@@ -3,3 +3,5 @@ A Machine Learning algorithm which would allow the users to recommend the most s
 
 - *the ML alorithm is located in the code & dataset folder* 
 - *The documentation and html files of the code are located in the submission folder* 
+
+The dataset can be found on the [Kaggle](https://www.kaggle.com/atharvaingle/crop-recommendation-dataset) website
